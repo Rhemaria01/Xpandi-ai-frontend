@@ -71,13 +71,30 @@ export const MessageContextProvider = ({
       ...prev,
       { id: cuid(), isUserMessage: true, text: query },
     ]);
+
+    const formattedPrevMessages = messages.slice(-6).map((msg) => ({
+      role: msg.isUserMessage ? ("user" as const) : ("assistant" as const),
+      content: msg.text,
+    }));
+
+    let prompt = `
+    PREVIOUS CONVERSATION:
+        ${formattedPrevMessages.map((message) => {
+          if (message.role === "user") return `User: ${message.content}\n`;
+          return `Assistant: ${message.content}\n`;
+        })}
+    \n----------------\n
+        USER INPUT: ${query}
+        
+      \n----------------\n
+    `;
     setQuery("");
     const response = await fetch(apiUrl + "stream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query: prompt }),
     });
     if (!response.ok) {
       setGenerating(false);

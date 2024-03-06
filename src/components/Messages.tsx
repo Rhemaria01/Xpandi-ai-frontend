@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { useContext } from "react";
 import { MessageContext } from "../context/messageContext";
 import Message from "./Message";
-import { Loader2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import StartingCards from "./StartingCards";
@@ -36,7 +35,7 @@ const Messages = () => {
                   <span className="text-xl font-medium pb-2">Xpandi</span>
                   <span>
                     {generating ? (
-                      <Loader2 className="h-6 w-6 animate-spin text-white" />
+                      <span className="animate-ping">|</span>
                     ) : (
                       <>
                         {output}
