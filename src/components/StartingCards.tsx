@@ -30,7 +30,7 @@ const StartingCards = () => {
       description: "for a non-alcoholic drink product.",
     },
     {
-      title: "Write a code in python",
+      title: "Write code in python",
       description: "to find if a number is a palindrome.",
     },
     {
