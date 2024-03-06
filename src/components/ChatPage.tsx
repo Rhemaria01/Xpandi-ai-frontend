@@ -8,7 +8,7 @@ const ChatPage = () => {
     <div className="bg-zinc-800 relative py-2">
       <div className="fixed top-0  w-full  z-20 ">
         <div className="text-3xl text-white ps-6 bg-primary text-center rounded-md py-2 mx-auto shadow-md shadow-primary">
-          Xpandi's AI
+          <a href="/">Xpandi's AI</a>
         </div>
       </div>
       <Messages />

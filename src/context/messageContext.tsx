@@ -15,6 +15,7 @@ type MessageContextType = {
   messages: message[];
   generating: boolean;
   handleCardClick: (query: string) => void;
+  aiTyping: boolean;
 };
 
 export const MessageContext = createContext<MessageContextType>({
@@ -25,6 +26,7 @@ export const MessageContext = createContext<MessageContextType>({
   messages: [],
   generating: false,
   handleCardClick: () => {},
+  aiTyping: false,
 });
 
 async function* streamGenerator(stream: ReadableStream<Uint8Array>) {
@@ -60,6 +62,7 @@ export const MessageContextProvider = ({
   };
 
   const [output, setOutput] = useState<string>("");
+  const aiTyping = output.length > 0;
   const [messages, setMessages] = useState<message[]>([]);
 
   const addMessage = async (query: string) => {
@@ -101,6 +104,7 @@ export const MessageContextProvider = ({
     }
     setQuery("");
     setOutput("");
+
     setMessages((prev) => [
       ...prev,
       { id: cuid(), isUserMessage: false, text: accRes },
@@ -121,6 +125,7 @@ export const MessageContextProvider = ({
         messages,
         generating,
         handleCardClick,
+        aiTyping,
       }}>
       {children}
     </MessageContext.Provider>
