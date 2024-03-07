@@ -6,13 +6,15 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 const ChatPage = () => {
   return (
     <div className="bg-zinc-800 relative py-2">
-      <div className="fixed top-0  w-full  z-20 ">
-        <div className="text-3xl text-white ps-6 bg-primary text-center rounded-md py-2 mx-auto shadow-sm shadow-primary">
-          <a href="/">Xpandi's AI</a>
+      <div className="fixed top-0  w-full  z-20 bg-zinc-800">
+        <div className="text-3xl font-medium text-white  bg-inherit text-center rounded-md py-2 ">
+          <a href="/" className="drop-shadow-glow">
+            X P A N D
+          </a>
         </div>
       </div>
       <Messages />
-      <div className="fixed bottom-0 w-full bg-zinc-800 h-28">
+      <div className="fixed bottom-0 w-full bg-gradient-to-b from-transparent to-zinc-800 to-25% h-40 pt-8 ">
         <MaxWidthWrapper>
           <ChatInput />
         </MaxWidthWrapper>
