@@ -35,7 +35,7 @@ const Messages = () => {
                   <span className="text-xl font-medium pb-2 text-white">
                     Xpandi
                   </span>
-                  <span>
+                  <span className="text-white">
                     {generating ? (
                       <span className="animate-ping text-white">|</span>
                     ) : (
