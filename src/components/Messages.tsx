@@ -32,14 +32,16 @@ const Messages = () => {
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <div className="transition-all prose whitespace-pre-wrap text-lg flex flex-col pt-2">
-                  <span className="text-xl font-medium pb-2">Xpandi</span>
+                  <span className="text-xl font-medium pb-2 text-white">
+                    Xpandi
+                  </span>
                   <span>
                     {generating ? (
-                      <span className="animate-ping">|</span>
+                      <span className="animate-ping text-white">|</span>
                     ) : (
                       <>
                         {output}
-                        <span className="animate-ping">|</span>
+                        <span className="animate-ping text-white">|</span>
                       </>
                     )}
                   </span>

@@ -20,10 +20,10 @@ const Message = ({ message }: { message: message }) => {
         className={cn(
           " transition-all prose whitespace-pre-wrap text-lg flex flex-col pt-2"
         )}>
-        <span className="text-xl font-medium pb-2">
+        <span className="text-xl font-medium pb-2 text-white">
           {message.isUserMessage ? "User" : "Xpandi"}
         </span>
-        <span>{message.text}</span>
+        <span className="text-white">{message.text}</span>
       </div>
     </div>
   );

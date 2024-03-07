@@ -13,7 +13,7 @@ const Cards = ({
   return (
     <button
       onClick={() => handleCardClick(`${title} ${description}`)}
-      className="text-white rounded-sm bg-black/35 border-4 border-border/20 p-4 md:p-6 flex flex-col items-center cursor-pointer focus-visible:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+      className="text-white rounded-lg bg-black/35 ring-[6px] ring-border/20 p-4 md:p-6 flex flex-col items-center cursor-pointer focus-visible:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
       <h3 className="text-lg md:text-xl font-medium">{title}</h3>
       <p className="text-md md:text-lg text-white/80">{description}</p>
     </button>
@@ -40,7 +40,7 @@ const StartingCards = () => {
   ];
   return (
     <MaxWidthWrapper className="flex justify-center items-center  h-[calc(100vh-10rem)]">
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 md:gap-8">
         {tasks.map((task) => (
           <Cards
             key={task.title}
