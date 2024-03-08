@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <MessageContextProvider>
-        <ChatPage />;
+        <ChatPage />
       </MessageContextProvider>
 
       <Toaster />

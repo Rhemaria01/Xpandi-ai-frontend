@@ -1,4 +1,3 @@
-import React from "react";
 import { Textarea } from "./ui/textarea";
 import { useContext } from "react";
 import { MessageContext } from "../context/messageContext";
