@@ -33,7 +33,7 @@ const Messages = () => {
                 </Avatar>
                 <div className="transition-all prose whitespace-pre-wrap text-lg flex flex-col pt-2">
                   <span className="text-xl font-medium pb-2 text-white">
-                    Xpandi
+                    OSIRIS AI
                   </span>
                   <span className="text-white">
                     {generating ? (
